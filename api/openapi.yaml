@@ -1,0 +1,210 @@
+openapi: 3.1.0
+info:
+  title: 마음 한 칸 (Emotion Garden) API
+  version: 1.0.0
+  description: >-
+    털어놓기(release)와 고민을 들어주는 대화(grow), AI 공급자 단독·비교 스트리밍,
+    봉투 처리 연출, 2D 꽃밭 심기 및 원자적 원문 정리를 위한 REST + SSE API 계약.
+servers:
+  - url: /api/v1
+components:
+  parameters:
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+  schemas:
+    ConversationKind:
+      type: string
+      enum: [release, grow]
+    ConversationStage:
+      type: string
+      enum: [chat, release_ritual, gift_ready, planting, completed]
+    ReplyPolicy:
+      type: string
+      enum: [apology, quiet, supportive]
+    GenerationMode:
+      type: string
+      enum: [openai, gemini, compare]
+    TurnMode:
+      type: string
+      enum: [quiet, openai, gemini, compare]
+    RunSlot:
+      type: string
+      enum: [primary, a, b]
+    RunStatus:
+      type: string
+      enum: [queued, running, streaming, succeeded, failed, incomplete, blocked, cancelled, interrupted]
+    UsageStatus:
+      type: string
+      enum: [known, partial, unknown]
+    RitualRoute:
+      type: string
+      enum: [common, sea, incinerate, bury, garden]
+    RitualStatus:
+      type: string
+      enum: [active, completed, abandoned]
+    FlowerStatus:
+      type: string
+      enum: [available, planting, planted, discarded]
+    OccupancyState:
+      type: string
+      enum: [reserved, planted]
+    DraftDisposition:
+      type: string
+      enum: [require_empty, discard]
+    ErrorCode:
+      type: string
+      enum:
+        - VALIDATION_ERROR
+        - UNSENT_DRAFT
+        - ACTIVE_CONVERSATION_EXISTS
+        - TURN_UNRESOLVED
+        - VERSION_CONFLICT
+        - IDEMPOTENCY_KEY_REUSED
+        - ALREADY_SELECTED
+        - CONTEXT_LIMIT
+        - PROVIDER_NOT_CONFIGURED
+        - MODEL_UNAVAILABLE
+        - RATE_LIMITED
+        - INVALID_TRANSITION
+        - ACTION_IN_PROGRESS
+        - CELL_OCCUPIED
+        - GARDEN_BUSY
+        - GARDEN_SHRINK_CONFLICT
+        - CONTENT_PURGED
+        - EVENT_CURSOR_EXPIRED
+        - NOT_FOUND
+        - ORIGIN_FORBIDDEN
+        - INTERNAL_ERROR
+    Meta:
+      type: object
+      required: [request_id, server_now]
+      properties:
+        request_id:
+          type: string
+        server_now:
+          type: string
+          format: date-time
+    ErrorEnvelope:
+      type: object
+      required: [error, meta]
+      properties:
+        error:
+          type: object
+          required: [code, message, retryable]
+          properties:
+            code:
+              $ref: "#/components/schemas/ErrorCode"
+            message:
+              type: string
+            retryable:
+              type: boolean
+            details:
+              type: object
+        meta:
+          $ref: "#/components/schemas/Meta"
+paths:
+  /bootstrap:
+    get:
+      summary: 사용자, capability 및 두 active 대화 슬롯 요약 조회
+  /catalogs/avatars:
+    get:
+      summary: 외모 옵션, 표정, 인사말 및 자산 버전 조회
+  /characters:
+    get:
+      summary: 캐릭터 목록 조회
+    post:
+      summary: 캐릭터 생성
+  /characters/{id}:
+    patch:
+      summary: 캐릭터 편집 (진행 대화 snapshot 유지)
+  /characters/{id}/archive:
+    post:
+      summary: 캐릭터 보관 처리 (soft delete)
+  /conversations/active:
+    get:
+      summary: 유형별 진행 대화 요약 조회
+  /conversations:
+    post:
+      summary: 새 대화 및 고정 첫 인사 생성
+  /conversations/{id}:
+    get:
+      summary: 대화 이력, 현재 turn, 초안 및 마무리 상태 조회
+  /conversations/{id}/preferences:
+    patch:
+      summary: 다음 요청부터 적용할 답장 정책 및 AI 모드 설정
+  /conversations/{id}/draft:
+    put:
+      summary: 별도 draft_version으로 초안 저장
+  /conversations/{id}/turns:
+    post:
+      summary: 사용자 메시지 저장 및 AI run 접수
+  /turns/{id}:
+    get:
+      summary: 현재 후보들과 일관된 이벤트 cursor snapshot 조회
+  /turns/{id}/events:
+    get:
+      summary: SSE 재생 및 실시간 스트리밍 이벤트 구독
+  /turns/{id}/selection:
+    post:
+      summary: 정상 완료된 후보 답변 하나 채택
+  /turns/{id}/skip:
+    post:
+      summary: 이번 답변 없이 turn 해결
+  /turns/{id}/feedback:
+    post:
+      summary: 선택적 1~5점 품질 평가 저장
+  /runs/{id}/cancel:
+    post:
+      summary: 특정 현재 run 중지
+  /runs/{id}/retry:
+    post:
+      summary: 실패한 현재 run에 대해 동일 설정 새 시도 생성
+  /conversations/{id}/closure:
+    post:
+      summary: 봉투 준비(release) 또는 꽃 1회 생성(grow) 시작
+  /rituals/{id}:
+    get:
+      summary: 현재 동작 settle 반영 및 다음 허용 명령 조회
+  /rituals/{id}/return-to-chat:
+    post:
+      summary: 공통 봉투 단계에서 대화로 돌아가기
+  /rituals/{id}/route:
+    post:
+      summary: 봉투 목적지(sea/incinerate/bury) 선택 및 arrive 시작
+  /rituals/{id}/actions:
+    post:
+      summary: 정의된 다음 동작 하나 시작
+  /rituals/{id}/actions/{actionId}/skip:
+    post:
+      summary: 지정한 현재 실행 중 동작 하나 완료
+  /rituals/{id}/complete:
+    post:
+      summary: 최종 마무리 확정 및 원문 정리(Purge)
+  /flowers/{id}:
+    patch:
+      summary: 남길 한 문장(<=80자) 및 임시 선택 좌표 저장
+  /flowers/{id}/planting:
+    post:
+      summary: 정원 자리 예약(reserved) 및 심기 시작
+  /flowers/{id}/discard:
+    post:
+      summary: 꽃 그냥 보내기 및 대화 종료·원문 정리
+  /garden:
+    get:
+      summary: 꽃밭 크기 및 모든 예약·식재 점유 칸 조회
+    patch:
+      summary: 꽃밭 가로·세로 크기 적용
+  /settings/ai:
+    get:
+      summary: 공급자 키 설정 상태, Mock 여부 및 모델 목록 조회
+    patch:
+      summary: 허용된 모델 alias, 기본 모드, 블라인드 평가 설정 변경
+  /comparisons:
+    get:
+      summary: 원문 텍스트 없는 비교 기록 및 평가 통계 조회

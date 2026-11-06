@@ -1,0 +1,33 @@
+catalog_version: "v1"
+
+species:
+  - id: "apricot_blossom"
+    name_ko: "살구빛 꽃"
+    weight: 1
+    petal_hex: "#F4A988"
+    center_hex: "#E07A5F"
+    stem_hex: "#588157"
+  - id: "little_daisy"
+    name_ko: "작은 데이지"
+    weight: 1
+    petal_hex: "#FFFDF7"
+    center_hex: "#F2C14E"
+    stem_hex: "#5E8C61"
+  - id: "lavender_bloom"
+    name_ko: "연보라 꽃"
+    weight: 1
+    petal_hex: "#B8A4DF"
+    center_hex: "#7D64B0"
+    stem_hex: "#52796F"
+  - id: "pink_petal"
+    name_ko: "분홍 꽃"
+    weight: 1
+    petal_hex: "#F2A6B8"
+    center_hex: "#D66A86"
+    stem_hex: "#588157"
+  - id: "four_leaf_clover"
+    name_ko: "네잎클로버"
+    weight: 1
+    petal_hex: "#6AA86E"
+    center_hex: "#467A4B"
+    stem_hex: "#3E6B42"

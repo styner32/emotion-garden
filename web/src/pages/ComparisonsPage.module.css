@@ -1,0 +1,245 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.loading {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+.headerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: 1.55rem;
+}
+
+.subtitle {
+  margin-top: 4px;
+  max-width: 660px;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.backLink {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.emptyCard {
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--ink-secondary);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: 1.15rem;
+}
+
+.groupGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.groupCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.groupTop {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.promptTag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  color: var(--ink-secondary);
+}
+
+.pairTitle {
+  font-size: 0.98rem;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.statBox {
+  background: var(--bg-canvas);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statBox span {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+.statBox strong {
+  font-size: 1rem;
+}
+
+.winsLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.winBadge {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.itemCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.itemTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.itemBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.kindRelease,
+.kindGrow,
+.catBadge {
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.kindRelease {
+  background: var(--accent-release-soft);
+  color: var(--accent-release);
+}
+
+.kindGrow {
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+}
+
+.catBadge {
+  background: var(--bg-subtle);
+  color: var(--ink-secondary);
+}
+
+.hashText {
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.runsRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.runMetaBox {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.runTitleLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+}
+
+.mockPill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--status-warn-bg);
+  color: var(--status-warn-ink);
+}
+
+.runMetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 0.76rem;
+  color: var(--ink-secondary);
+}
+
+@media (max-width: 680px) {
+  .runsRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

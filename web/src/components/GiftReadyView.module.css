@@ -1,0 +1,278 @@
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.giftCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.eyebrow {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-grow-soft);
+  border: 1px solid var(--accent-grow-border);
+  color: var(--accent-grow);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.flowerShowcase {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-hairline);
+}
+
+.flowerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.speciesTitle {
+  font-size: 1.4rem;
+  color: var(--ink-primary);
+}
+
+.speciesDesc {
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+}
+
+.keptLineSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.counter {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.counterOver {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--status-error-ink);
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.saveLineBtn {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-canvas);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.savedHint {
+  font-size: 0.8rem;
+  color: var(--accent-grow);
+}
+
+.errorHint {
+  font-size: 0.8rem;
+  color: var(--status-error-ink);
+}
+
+.gardenPickerSection {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pickerHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.pickerTitle {
+  font-size: 1.05rem;
+}
+
+.pickerSub {
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+}
+
+.gardenLink {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent-grow);
+}
+
+.warnBox {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--status-warn-bg);
+  color: var(--status-warn-ink);
+  border: 1px solid var(--status-warn-border);
+  font-size: 0.86rem;
+}
+
+.grid {
+  display: grid;
+  gap: 8px;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  min-height: 54px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px;
+  transition: border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.cellEmpty {
+  border: 1.5px dashed var(--border-strong);
+  background: hsl(35, 32%, 94%);
+  color: var(--ink-secondary);
+}
+
+.cellEmpty:hover:not(:disabled) {
+  border-color: var(--accent-grow);
+  background: var(--accent-grow-soft);
+}
+
+.cellSelected {
+  border: 2px solid var(--accent-grow);
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+  font-weight: 700;
+}
+
+.cellOccupied {
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+  opacity: 0.78;
+}
+
+.soilDot {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.cellTag {
+  font-size: 0.68rem;
+  line-height: 1.1;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.errorBanner {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--status-error-bg);
+  color: var(--status-error-ink);
+  border: 1px solid var(--status-error-border);
+  font-size: 0.88rem;
+}
+
+.footerActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.discardBtn {
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-canvas);
+  color: var(--ink-secondary);
+  font-weight: 500;
+}
+
+.discardBtn:hover:not(:disabled) {
+  background: var(--bg-subtle);
+  color: var(--ink-primary);
+}
+
+.plantBtn {
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--accent-grow);
+  color: var(--ink-on-accent);
+  font-weight: 700;
+}
+
+.plantBtn:hover:not(:disabled) {
+  background: var(--accent-grow-hover);
+}
+
+@media (max-width: 560px) {
+  .giftCard {
+    padding: var(--space-4);
+  }
+
+  .flowerShowcase {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .grid {
+    gap: 5px;
+  }
+
+  .cell {
+    min-height: 42px;
+    padding: 2px;
+  }
+
+  .cellTag {
+    font-size: 0.6rem;
+  }
+}

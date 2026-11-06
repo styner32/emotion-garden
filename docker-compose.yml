@@ -1,0 +1,55 @@
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: emotion_garden
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d emotion_garden"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["/app/migrate", "up"]
+    environment:
+      DATABASE_URL: postgres://app:change_me@db:5432/emotion_garden?sslmode=disable
+      DEFAULT_TIMEZONE: Asia/Seoul
+      GARDEN_DEFAULT_COLS: "4"
+      GARDEN_DEFAULT_ROWS: "3"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      APP_ENV: production
+      HTTP_ADDR: 0.0.0.0:8080
+      PUBLIC_ORIGIN: http://localhost:8080
+      EXTRA_ALLOWED_ORIGINS: http://127.0.0.1:8080,http://localhost:8080
+      AUTH_MODE: single_user
+      IDEMPOTENCY_SECRET: ${IDEMPOTENCY_SECRET:-dev-emotion-garden-hmac-secret-change-in-prod}
+      DATABASE_URL: postgres://app:change_me@db:5432/emotion_garden?sslmode=disable
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      ALLOW_MOCK_AI: ${ALLOW_MOCK_AI:-true}
+      STATIC_DIR: /app/web/dist
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  pgdata:

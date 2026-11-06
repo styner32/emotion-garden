@@ -1,0 +1,54 @@
+registry_version: "2026-11-05.v1"
+default_release_mode: "openai"
+default_grow_mode: "openai"
+
+models:
+  - alias: "openai_chat"
+    display_name: "OpenAI GPT-6.1 Sol"
+    provider: "openai"
+    model_id: "gpt-6.1-sol"
+    api_variant: "responses"
+    api_revision: "2026-11-05"
+    enabled: true
+    default_reasoning_level: "low"
+    supported_reasoning_levels: ["low", "medium", "high"]
+    supports_temperature: false
+    supports_top_p: false
+    max_input_tokens: 128000
+    max_output_tokens: 4096
+    price_version: "price_2026_11_v1"
+
+  - alias: "gemini_chat"
+    display_name: "Google Gemini 3.8 Flash"
+    provider: "gemini"
+    model_id: "gemini-3.8-flash"
+    api_variant: "interactions"
+    api_revision: "v1beta-2026-11"
+    enabled: true
+    default_reasoning_level: "low"
+    supported_reasoning_levels: ["low", "medium", "high"]
+    supports_temperature: false
+    supports_top_p: false
+    max_input_tokens: 128000
+    max_output_tokens: 4096
+    price_version: "price_2026_11_v1"
+
+price_rules:
+  - price_version: "price_2026_11_v1"
+    currency: "USD"
+    effective_from: "2026-11-05T00:00:00Z"
+    rates:
+      openai:gpt-6.1-sol:responses:
+        input_per_1m: "1.50"
+        cached_input_per_1m: "0.375"
+        cache_write_per_1m: "0.00"
+        output_per_1m: "6.00"
+        reasoning_per_1m: "0.00"
+        reasoning_included_in_output: true
+      gemini:gemini-3.8-flash:interactions:
+        input_per_1m: "0.30"
+        cached_input_per_1m: "0.075"
+        cache_write_per_1m: "0.10"
+        output_per_1m: "2.50"
+        reasoning_per_1m: "2.50"
+        reasoning_included_in_output: false

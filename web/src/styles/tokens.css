@@ -1,0 +1,65 @@
+:root {
+  /* Warm Korean Paper & Botanical Stationery Palette (HSL) */
+  --bg-canvas: hsl(38, 38%, 96%);
+  --bg-surface: hsl(40, 46%, 99%);
+  --bg-elevated: hsl(40, 50%, 99.5%);
+  --bg-subtle: hsl(36, 26%, 92%);
+  --bg-muted: hsl(35, 20%, 88%);
+
+  --ink-primary: hsl(26, 24%, 16%);
+  --ink-secondary: hsl(28, 15%, 36%);
+  --ink-muted: hsl(30, 11%, 52%);
+  --ink-on-accent: hsl(40, 50%, 98%);
+
+  --border-hairline: hsl(34, 22%, 85%);
+  --border-strong: hsl(32, 20%, 73%);
+
+  /* Release (비움 - Terracotta Sealing Wax) */
+  --accent-release: hsl(15, 46%, 42%);
+  --accent-release-hover: hsl(15, 48%, 35%);
+  --accent-release-soft: hsl(16, 52%, 94%);
+  --accent-release-border: hsl(15, 38%, 78%);
+
+  /* Grow (피움 - Botanical Moss & Sage) */
+  --accent-grow: hsl(148, 28%, 31%);
+  --accent-grow-hover: hsl(148, 30%, 25%);
+  --accent-grow-soft: hsl(146, 30%, 93%);
+  --accent-grow-border: hsl(146, 24%, 75%);
+
+  /* Status & Feedback */
+  --status-warn-bg: hsl(39, 78%, 94%);
+  --status-warn-ink: hsl(32, 68%, 28%);
+  --status-warn-border: hsl(38, 56%, 75%);
+
+  --status-error-bg: hsl(6, 62%, 95%);
+  --status-error-ink: hsl(6, 58%, 33%);
+  --status-error-border: hsl(6, 44%, 78%);
+
+  --status-info-bg: hsl(204, 38%, 94%);
+  --status-info-ink: hsl(206, 42%, 28%);
+
+  /* Typography */
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-serif: 'Gowun Batang', 'Noto Serif KR', Georgia, serif;
+
+  /* Spacing & Radii */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* Soft Paper Shadows */
+  --shadow-card: 0 2px 10px hsla(28, 26%, 18%, 0.05), 0 1px 2px hsla(28, 26%, 18%, 0.04);
+  --shadow-modal: 0 18px 44px hsla(28, 28%, 14%, 0.16), 0 2px 8px hsla(28, 26%, 14%, 0.08);
+
+  --max-width-shell: 1040px;
+}

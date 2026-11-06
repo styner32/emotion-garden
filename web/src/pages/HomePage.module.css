@@ -1,0 +1,347 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.hero {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.heroTitle {
+  font-size: clamp(1.45rem, 3vw, 1.95rem);
+  color: var(--ink-primary);
+}
+
+.heroLead {
+  color: var(--ink-secondary);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.errorBanner {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--status-error-bg);
+  color: var(--status-error-ink);
+  border: 1px solid var(--status-error-border);
+  font-size: 0.9rem;
+}
+
+.dualGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.modeCard {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-5);
+  border: 1px solid var(--border-hairline);
+}
+
+.releaseCard {
+  border-top: 4px solid var(--accent-release);
+}
+
+.growCard {
+  border-top: 4px solid var(--accent-grow);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.releaseBadge,
+.growBadge {
+  align-self: flex-start;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.releaseBadge {
+  background: var(--accent-release-soft);
+  color: var(--accent-release);
+  border: 1px solid var(--accent-release-border);
+}
+
+.growBadge {
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+  border: 1px solid var(--accent-grow-border);
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  color: var(--ink-primary);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+  line-height: 1.62;
+}
+
+.loadingText {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.activeBox {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.activeRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.activeMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statusChip {
+  align-self: flex-start;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  background: var(--bg-subtle);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.charName {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+}
+
+.modeNote {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.launcherBox {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.emptyCharsBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.fieldLabelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fieldLabel {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.smallLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-grow);
+}
+
+.charPickList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.charPickItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 6px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+}
+
+.charPickSelected {
+  border-color: var(--ink-primary);
+  box-shadow: 0 0 0 1.5px var(--ink-primary);
+  font-weight: 700;
+}
+
+.charPickName {
+  font-size: 0.88rem;
+}
+
+.select {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+}
+
+.policyToggle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+.policyBtn {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.policyBtn strong {
+  font-size: 0.88rem;
+}
+
+.policyBtn span {
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+}
+
+.policyBtnActive {
+  border-color: var(--accent-release);
+  background: var(--accent-release-soft);
+}
+
+.launcherActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cancelLinkBtn {
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-size: 0.86rem;
+}
+
+.releasePrimaryBtn,
+.growPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  color: var(--ink-on-accent);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.releasePrimaryBtn {
+  background: var(--accent-release);
+}
+
+.releasePrimaryBtn:hover:not(:disabled) {
+  background: var(--accent-release-hover);
+}
+
+.growPrimaryBtn {
+  background: var(--accent-grow);
+}
+
+.growPrimaryBtn:hover:not(:disabled) {
+  background: var(--accent-grow-hover);
+}
+
+.gardenBanner {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.gardenBannerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gardenBannerTitle {
+  font-size: 1.18rem;
+}
+
+.gardenBannerSub {
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.gardenVisitBtn {
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--accent-grow-border);
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 780px) {
+  .dualGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .modeCard {
+    padding: var(--space-4);
+  }
+
+  .gardenBanner {
+    padding: var(--space-4);
+  }
+}

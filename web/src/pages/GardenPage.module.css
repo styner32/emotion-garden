@@ -1,0 +1,332 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.loading {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+.headerRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin-top: 4px;
+  max-width: 620px;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.statsPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  font-size: 0.86rem;
+}
+
+.statsPill strong {
+  color: var(--accent-grow);
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.plotCard {
+  background: hsl(36, 32%, 93%);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.legendRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legendEmpty {
+  font-weight: 700;
+}
+
+.legendPlanted {
+  color: var(--accent-grow);
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  border-radius: var(--radius-md);
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.cellEmpty {
+  border: 1.5px dashed hsl(32, 22%, 74%);
+  background: hsla(36, 30%, 96%, 0.65);
+  color: var(--ink-muted);
+}
+
+.cellReserved {
+  border: 2px dashed var(--accent-grow);
+  background: var(--status-warn-bg);
+  color: var(--status-warn-ink);
+}
+
+.cellPlanted {
+  border: 1px solid var(--accent-grow-border);
+  background: var(--bg-surface);
+  box-shadow: 0 2px 6px rgba(42, 60, 44, 0.06);
+}
+
+.cellPlanted:hover {
+  border-color: var(--accent-grow);
+}
+
+.cellSelected {
+  outline: 2.5px solid var(--accent-grow);
+  outline-offset: 1px;
+}
+
+.emptySoilIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.seedlingBadge {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.cellCaption {
+  font-size: 0.7rem;
+  line-height: 1.15;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidePane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detailCard,
+.hintCard,
+.resizeCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailCoord {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.closeBtn {
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-canvas);
+  font-size: 0.78rem;
+}
+
+.reservedDetail,
+.plantedDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.detailSpecies {
+  font-size: 1.3rem;
+}
+
+.detailDate {
+  font-size: 0.84rem;
+  color: var(--accent-grow);
+  font-weight: 600;
+}
+
+.keptQuote {
+  margin: var(--space-2) 0;
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--bg-canvas);
+  border-left: 3px solid var(--accent-grow);
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.noQuote {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+}
+
+.privacyNote {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.resumePlantBtn {
+  margin-top: var(--space-2);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-grow);
+  color: var(--ink-on-accent);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.sideTitle {
+  font-size: 1.08rem;
+}
+
+.sideDesc {
+  font-size: 0.86rem;
+  color: var(--ink-secondary);
+}
+
+.sizeInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.sizeField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.numInput {
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.warnText {
+  font-size: 0.82rem;
+  color: var(--status-warn-ink);
+  background: var(--status-warn-bg);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.errorText {
+  font-size: 0.82rem;
+  color: var(--status-error-ink);
+  background: var(--status-error-bg);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.successText {
+  font-size: 0.82rem;
+  color: var(--accent-grow);
+}
+
+.resizeBtn {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-canvas);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.resizeBtn:hover:not(:disabled) {
+  background: var(--bg-subtle);
+}
+
+@media (max-width: 820px) {
+  .mainLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Ensure 6 columns fit cleanly even on 320px mobile screens (GARD03) */
+@media (max-width: 480px) {
+  .plotCard {
+    padding: var(--space-3);
+  }
+
+  .grid {
+    gap: 4px;
+  }
+
+  .cell {
+    padding: 2px;
+    border-radius: 6px;
+  }
+
+  .cellCaption {
+    font-size: 0.56rem;
+  }
+}

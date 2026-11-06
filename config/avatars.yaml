@@ -1,0 +1,124 @@
+catalog_version: "v1"
+schema_version: "appearance_v1"
+
+face_presets:
+  - id: "calm_oval"
+    label: "담담한 계란형"
+    description: "차분하고 균형 잡힌 기본 인상"
+    recommended_for: ["grow", "release"]
+  - id: "warm_round"
+    label: "포근한 둥근형"
+    description: "부드러운 눈썹과 편안한 턱선"
+    recommended_for: ["grow"]
+  - id: "sharp_stern"
+    label: "날카롭고 까칠한 인상"
+    description: "치켜올라간 눈썹과 단호한 턱선"
+    recommended_for: ["release"]
+  - id: "blunt_square"
+    label: "무심하고 단단한 인상"
+    description: "일자 눈썹과 각진 윤곽"
+    recommended_for: ["release"]
+  - id: "cynical_narrow"
+    label: "예민하고 냉담한 인상"
+    description: "좁은 미간과 차가운 분위기"
+    recommended_for: ["release"]
+
+hair_styles:
+  - id: "perm"
+    label: "파마"
+  - id: "long_straight"
+    label: "긴 생머리"
+  - id: "braid"
+    label: "땋은 머리"
+  - id: "sport"
+    label: "스포츠"
+  - id: "leaf_cut"
+    label: "리프컷"
+  - id: "dandy_cut"
+    label: "댄디컷"
+
+hair_palette:
+  - "#231F20"
+  - "#3E2B23"
+  - "#6B442A"
+  - "#9A6B43"
+  - "#C79A63"
+  - "#5A4A66"
+  - "#7A3B3B"
+  - "#6F767D"
+
+skin_tones:
+  - id: "tone_01"
+    label: "톤 1 (가장 밝음)"
+    base_hex: "#FCE7DC"
+    shadow_hex: "#DDB8A6"
+    highlight_hex: "#FFF5F0"
+  - id: "tone_02"
+    label: "톤 2 (밝음)"
+    base_hex: "#F5D3C1"
+    shadow_hex: "#CFA18B"
+    highlight_hex: "#FFEBE0"
+  - id: "tone_03"
+    label: "톤 3 (중간 밝음)"
+    base_hex: "#E5B99E"
+    shadow_hex: "#BA886C"
+    highlight_hex: "#F6D5C0"
+  - id: "tone_04"
+    label: "톤 4 (중간)"
+    base_hex: "#C99372"
+    shadow_hex: "#9B6749"
+    highlight_hex: "#DFB093"
+  - id: "tone_05"
+    label: "톤 5 (깊음)"
+    base_hex: "#9D694A"
+    shadow_hex: "#70452C"
+    highlight_hex: "#B88566"
+  - id: "tone_06"
+    label: "톤 6 (가장 깊음)"
+    base_hex: "#6F4630"
+    shadow_hex: "#482B1B"
+    highlight_hex: "#8C6047"
+
+eye_styles:
+  - id: "sparkling"
+    label: "반짝이는 눈"
+  - id: "glaring"
+    label: "째려보는 눈"
+
+feature_levels:
+  - id: "none"
+    label: "없음"
+  - id: "mild"
+    label: "약함"
+  - id: "distinct"
+    label: "뚜렷함"
+
+clothing_palette:
+  - "#5E7A68"
+  - "#7D6B5D"
+  - "#4F6478"
+  - "#A46756"
+  - "#D4C6B4"
+  - "#3A3F45"
+
+expressions:
+  - id: "challenging"
+    label: "도전적 (첫 인사)"
+  - id: "apologetic"
+    label: "사과하는 표정"
+  - id: "listening"
+    label: "경청하는 표정"
+
+greetings:
+  release:
+    default_key: "what_do_you_want"
+    options:
+      - key: "what_do_you_want"
+        text: "나한테 할 말이 뭔데?"
+      - key: "what_is_your_complaint"
+        text: "뭐가 불만이야?"
+  grow:
+    default_key: "tell_me_slowly"
+    options:
+      - key: "tell_me_slowly"
+        text: "오늘 마음에 걸린 일이 있어? 천천히 말해줘."

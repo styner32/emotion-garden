@@ -1,0 +1,145 @@
+definition_version: "v1"
+
+routes:
+  common:
+    kind: "release"
+    label: "봉투에 담기"
+    actions:
+      - key: "pack"
+        label: "봉투 묶기"
+        duration_ms: 800
+        visual_stage: 0
+        completed_visual_stage: 1
+        description: "대화의 말풍선들을 모아 종이 봉투에 담고 단단히 묶습니다."
+      - key: "lift"
+        label: "어깨에 메기"
+        duration_ms: 1400
+        visual_stage: 1
+        completed_visual_stage: 2
+        description: "묶인 봉투를 두 손으로 들어 어깨에 올립니다."
+
+  sea:
+    kind: "release"
+    label: "해변으로 가기"
+    close_reason: "ritual_sea"
+    actions:
+      - key: "arrive"
+        label: "해변으로 이동"
+        duration_ms: 1600
+        visual_stage: 0
+        completed_visual_stage: 1
+        description: "봉투를 어깨에 멘 채 파도가 치는 해변 앞으로 걸어갑니다."
+      - key: "prepare"
+        label: "던질 준비"
+        duration_ms: 1200
+        visual_stage: 1
+        completed_visual_stage: 2
+        description: "해변 앞에서 봉투를 고쳐 잡고 던질 자세를 취합니다."
+      - key: "throw"
+        label: "바다로 던지기"
+        duration_ms: 2500
+        visual_stage: 2
+        completed_visual_stage: 3
+        description: "손에서 떠난 봉투가 포물선을 그리며 날아가 물보라와 함께 물결 속으로 사라집니다."
+
+  incinerate:
+    kind: "release"
+    label: "소각하러 가기"
+    close_reason: "ritual_incinerate"
+    actions:
+      - key: "arrive"
+        label: "소각 장소로 이동"
+        duration_ms: 1600
+        visual_stage: 0
+        completed_visual_stage: 1
+        description: "봉투를 어깨에 멘 채 소각통이 있는 터로 걸어갑니다."
+      - key: "place"
+        label: "봉투 내려놓기"
+        duration_ms: 1600
+        visual_stage: 1
+        completed_visual_stage: 2
+        description: "어깨의 봉투를 앞쪽 안전한 바닥에 내려놓습니다."
+      - key: "take_torch"
+        label: "불붙은 막대 집기"
+        duration_ms: 1700
+        visual_stage: 2
+        completed_visual_stage: 3
+        description: "옆 소각통에서 타오르는 막대를 조심스럽게 집어 듭니다."
+      - key: "ignite"
+        label: "봉투에 불붙이기"
+        duration_ms: 4500
+        visual_stage: 3
+        completed_visual_stage: 4
+        description: "막대가 닿자 봉투에 불길이 크게 타오르고 이내 고운 재만 남습니다."
+
+  bury:
+    kind: "release"
+    label: "묻으러 가기"
+    close_reason: "ritual_bury"
+    actions:
+      - key: "arrive"
+        label: "땅으로 이동"
+        duration_ms: 1600
+        visual_stage: 0
+        completed_visual_stage: 1
+        description: "봉투를 멘 채 고요한 흙터로 걸어갑니다."
+      - key: "place"
+        label: "봉투 내려놓기"
+        duration_ms: 1600
+        visual_stage: 1
+        completed_visual_stage: 2
+        description: "어깨의 봉투를 땅 옆에 내려놓습니다."
+      - key: "dig"
+        label: "땅 파기"
+        duration_ms: 3600
+        visual_stage: 2
+        completed_visual_stage: 3
+        description: "삽으로 흙을 퍼내어 구덩이와 옆 흙더미를 만듭니다."
+      - key: "lower"
+        label: "봉투 넣기"
+        duration_ms: 1700
+        visual_stage: 3
+        completed_visual_stage: 4
+        description: "봉투를 들어 구덩이 안쪽에 차분히 내려놓습니다."
+      - key: "cover"
+        label: "흙 덮기"
+        duration_ms: 3200
+        visual_stage: 4
+        completed_visual_stage: 5
+        description: "옆에 쌓아둔 흙더미를 옮겨 봉투를 덮고 평탄하게 다집니다."
+
+  garden:
+    kind: "planting"
+    label: "꽃밭에 심기"
+    close_reason: "flower_planted"
+    actions:
+      - key: "arrive"
+        label: "자리로 이동"
+        duration_ms: 1700
+        visual_stage: 0
+        completed_visual_stage: 0
+        description: "선택한 꽃밭 자리 앞으로 걸어옵니다."
+      - key: "dig"
+        label: "땅 파기"
+        duration_ms: 3200
+        visual_stage: 0
+        completed_visual_stage: 1
+        description: "삽으로 구덩이를 파고 옆에 부드러운 흙을 쌓습니다."
+      - key: "plant"
+        label: "꽃 심기"
+        duration_ms: 2200
+        visual_stage: 1
+        completed_visual_stage: 2
+        description: "삽을 내려놓고 양손으로 뿌리 흙덩이를 감싸 구덩이에 놓습니다."
+      - key: "cover"
+        label: "흙 덮기"
+        duration_ms: 2800
+        visual_stage: 2
+        completed_visual_stage: 3
+        description: "주변 흙을 덮고 삽으로 옆 흙을 단단히 다집니다."
+      - key: "water"
+        label: "물 주기"
+        duration_ms: 4200
+        visual_stage: 3
+        completed_visual_stage: 4
+        description: "물뿌리개를 기울여 맑은 물을 주고 촉촉해진 흙 옆에 내려놓습니다."

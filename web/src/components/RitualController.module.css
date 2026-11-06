@@ -1,0 +1,252 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.topBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.metaGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.kindPill {
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.kindRelease {
+  background: var(--accent-release-soft);
+  color: var(--accent-release);
+  border: 1px solid var(--accent-release-border);
+}
+
+.kindGrow {
+  background: var(--accent-grow-soft);
+  color: var(--accent-grow);
+  border: 1px solid var(--accent-grow-border);
+}
+
+.stepCounter {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.returnBtn {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  font-size: 0.82rem;
+}
+
+.returnBtn:hover:not(:disabled) {
+  background: var(--bg-subtle);
+  color: var(--ink-primary);
+}
+
+.captionCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.captionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  color: var(--ink-primary);
+}
+
+.stepDesc {
+  margin-top: 4px;
+  color: var(--ink-secondary);
+  font-size: 0.95rem;
+}
+
+.flowerMini {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  background: var(--accent-grow-soft);
+  border: 1px solid var(--accent-grow-border);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent-grow);
+}
+
+.errorBanner {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--status-error-bg);
+  color: var(--status-error-ink);
+  border: 1px solid var(--status-error-border);
+  font-size: 0.88rem;
+}
+
+.controlsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.skipBtn {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-canvas);
+  color: var(--ink-secondary);
+  font-weight: 500;
+}
+
+.skipBtn:hover:not(:disabled) {
+  background: var(--bg-subtle);
+  color: var(--ink-primary);
+}
+
+.primaryReleaseBtn,
+.primaryGrowBtn {
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  color: var(--ink-on-accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.primaryReleaseBtn {
+  background: var(--accent-release);
+}
+
+.primaryReleaseBtn:hover:not(:disabled) {
+  background: var(--accent-release-hover);
+}
+
+.primaryGrowBtn {
+  background: var(--accent-grow);
+}
+
+.primaryGrowBtn:hover:not(:disabled) {
+  background: var(--accent-grow-hover);
+}
+
+.routeSection {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.routeNotice {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.routeNotice strong {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+
+.routeNotice span {
+  font-size: 0.83rem;
+  color: var(--status-warn-ink);
+}
+
+.routeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.routeCard {
+  text-align: left;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.16s ease, transform 0.16s ease;
+}
+
+.routeCard:hover:not(:disabled) {
+  border-color: var(--accent-release);
+  background: var(--bg-elevated);
+  transform: translateY(-1px);
+}
+
+.routeBadge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-release-soft);
+  color: var(--accent-release);
+}
+
+.routeTitle {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--ink-primary);
+}
+
+.routeDesc {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+.gardenHint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  padding: 0 var(--space-1);
+}
+
+.inlineLink {
+  color: var(--accent-grow);
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .routeGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .captionCard {
+    padding: var(--space-4);
+  }
+}
